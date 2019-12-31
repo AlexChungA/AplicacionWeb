@@ -37,6 +37,76 @@ class Tabla{
       return $this->n;
       $this->dbh=null;
   }
+  public function get_school_by_id($school_id)
+  {
+    $sql2 = "SELECT * FROM escuelas WHERE school_id=?;";
+    $stmt = $this->dbh->prepare($sql2);
+    if($stmt->execute( array($school_id) ))
+    {
+      while($row = $stmt->fetch())
+      {
+        $this->n[]=$row;
+      }
+      return $this->n;
+      $this->dbh=null;
+    }
+  }
+  public function insertar()
+  {
+    if(empty($_POST["name"]) or empty($_POST["op1"]) or empty($_POST["op2"]) or empty($_POST["op3"]) or empty($_POST["op4"]) or empty($_POST["op5"]) or empty($_POST["op6"]))
+    {
+      header("Location: add.php?m=1");
+      exit;
+    }
+    $stmt=$this->dbh->prepare($this->sql);
+    $stmt->bindParam(1,$name);
+    $stmt->bindParam(2,$op1);
+    $stmt->bindParam(3,$op2);
+    $stmt->bindParam(4,$op4);
+    $stmt->bindParam(5,$op3);
+    $stmt->bindParam(6,$op5);
+    $stmt->bindParam(7,$op6);
+
+    $name=strip_tags($_POST["name"]);
+    $op1=strip_tags($_POST["op1"]);
+    $op2=strip_tags($_POST["op2"]);
+    $op3=strip_tags($_POST["op3"]);
+    $op4=strip_tags($_POST["op4"]);
+    $op5=strip_tags($_POST["op5"]);
+    $op6=strip_tags($_POST["op6"]);
+
+    $stmt->execute();
+    $this->dbh=null;
+    header("Location: add.php?m=2");
+  }
+  public function actualizar()
+  {
+    if(empty($_POST["name"]) or empty($_POST["op1"]) or empty($_POST["op2"]) or empty($_POST["op3"]) or empty($_POST["op4"]) or empty($_POST["op5"]) or empty($_POST["op6"]))
+    {
+      header("Location: update.php?m=1&school_id=".$_POST["school_id"]);
+      exit;
+    }
+    $stmt=$this->dbh->prepare($this->sql);
+    $stmt->bindValue(1,$_POST["name"], PDO::PARAM_STR);
+    $stmt->bindValue(2,$_POST["op1"], PDO::PARAM_STR);
+    $stmt->bindValue(3,$_POST["op2"], PDO::PARAM_STR);
+    $stmt->bindValue(4,$_POST["op3"], PDO::PARAM_STR);
+    $stmt->bindValue(5,$_POST["op4"], PDO::PARAM_STR);
+    $stmt->bindValue(6,$_POST["op5"], PDO::PARAM_STR);
+    $stmt->bindValue(7,$_POST["op6"], PDO::PARAM_STR);
+    $stmt->bindValue(8,$_POST["school_id"], PDO::PARAM_STR);
+    $stmt->execute();
+    $this->dbh=null;
+    header("Location: update.php?m=2&school_id=".$_POST["school_id"]);
+  }
+  public function borrar($school_id,$sql)
+  {
+    $stmt = $this->dbh->prepare($sql);
+    $stmt->bindParam(1,$school_id);
+    $stmt->execute();
+    $this->dbh=null;
+    header("Location: paginaprincipal.php?m=1");
+  }
 }
 
  ?>
