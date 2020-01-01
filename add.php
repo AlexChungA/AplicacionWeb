@@ -10,20 +10,20 @@ if (isset($_POST["grabar"]) and $_POST["grabar"]=="si"){
 <head>
 <meta charset="utf-8"/>
 <title>Add a new school to the list</title>
+<link rel = "stylesheet" href="estilos.css">
 </head>
 <body>
-  <aside>
-    <blockquote>
-       <a href="paginaprincipal.php"> Go Back </a>
-    </blockquote>
-  </aside>
+  <body>
+    <div class="back">
+         <input type="button"  class= "btn btn4" value="Go Back" onclick="window.location='paginaprincipal.php'"/>
+    </div>
 <?php
   if(isset($_GET["m"]))
   {
     switch ($_GET["m"]) {
       case '1':
         ?>
-        <h4 style="color: red;">Please, fill all the fields.</h4>
+        <h4 style="color: #AE0A0A;">Please, fill all the fields.</h4>
         <?php
         break;
       case '2':
@@ -47,9 +47,9 @@ if (isset($_POST["grabar"]) and $_POST["grabar"]=="si"){
           <input type="text" name="op5" placeholder="offer_htl" class="form-control">
           <input type="text" name="op6" placeholder="htl_designated_centre" class="form-control">
         </div>
-        <button type = "submit" name="grabar" value="si" class="btn btn-primary">
-          Add new school
-        </button>
+          <button type = "submit" class= "btn btn2" name="grabar" value="si" class="btn btn-primary">
+            Add new school
+          </button>
       </form>
     </div>
   </div>

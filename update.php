@@ -11,20 +11,20 @@ $datos=$ta->get_school_by_id($_GET["school_id"]);
 <head>
 <meta charset="utf-8"/>
 <title>Update school</title>
+<link rel = "stylesheet" href="estilos.css">
 </head>
 <body>
-  <aside>
-    <blockquote>
-       <a href="paginaprincipal.php"> Go Back </a>
-    </blockquote>
-  </aside>
+  <body>
+    <div class="back">
+         <input type="button"  class= "btn btn4" value="Go Back" onclick="window.location='paginaprincipal.php'"/>
+    </div>
 <?php
   if(isset($_GET["m"]))
   {
     switch ($_GET["m"]) {
       case '1':
         ?>
-        <h4 style="color: red;">Please, fill all the fields.</h4>
+        <h4 style="color: #AE0A0A;">Please, fill all the fields.</h4>
         <?php
         break;
       case '2':
@@ -50,9 +50,10 @@ $datos=$ta->get_school_by_id($_GET["school_id"]);
         </div>
         <input type = "hidden" name="grabar" value="si"/>
         <input type = "hidden" name= "school_id" value="<?php echo $_GET["school_id"];?>"/>
-        <button type = "submit" class="btn btn-primary">
+        <div class "add">
+        <button type = "submit" class="btn btn2" class="btn btn-primary">
           Update new school
-        </button>
+        </button></div>
       </form>
     </div>
   </div>
