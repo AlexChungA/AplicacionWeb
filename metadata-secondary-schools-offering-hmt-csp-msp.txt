@@ -1,0 +1,93 @@
+# Metadata for Schools and Centres Offering Higher Mother Tongue
+---
+Identifier: 'cc161927-3c23-4120-a63e-c4fa18f5b3d6'
+Name: 'secondary-schools-offering-hmt-csp-msp'
+Title: 'Schools and Centres Offering Higher Mother Tongue'
+Description:
+  - 'List of Schools and Centres offering Higher Mother Tongue'
+  - ''
+  - 'Note(s):'
+  - ''
+  - '1. The table lists the schools and designated centres that offer Higher Mother
+    Tongue Language [HMTL i.e. Higher Chinese Language (HCL or hcl), Higher Malay
+    Language (HML or hml) and Higher Tamil Language (HTL or htl)].'
+  - '2. Students taking HMTL will attend lessons at their own secondary school during
+    curriculum time, if the school offers it (schools denoted by “Yes” under the language
+    offered in table). Otherwise, they will attend lessons in a designated centre
+    outside curriculum time (schools denoted by “Yes” under the respective language
+    designated centres).'
+  - '3. Secondary schools have the flexibility to allow students who do not meet the
+    criteria to take up HMTL to do so, if such students are assessed to have exceptional
+    ability in MTL and are able to do HMTL without affecting their performance in
+    other subjects.'
+  - '4. For Independent Schools, parents should refer to the individual school pages
+    in Reference K of the Secondary Schools booklet (accessible at www,moe.gov.sg/s1-posting)
+    or contact the schools directly for information on school-based programmes/subjects
+    that they might be offering.'
+Topics:
+  - 'Education'
+Keywords:
+  - 'Chinese'
+  - 'Languages'
+  - 'Malay'
+  - 'Mother Tongue'
+  - 'Schools'
+  - 'Secondary Education'
+  - 'Students'
+  - 'Tamil'
+Publisher:
+  Name: 'Ministry of Education'
+  Admin 1:
+    Name: 'Lily Chng Wan Peng'
+    Department: 'Pupil Placement, Student Placement and Services Division'
+    Email: 'wan_peng_chng@moe.gov.sg'
+Sources:
+  - 'Ministry of Education'
+License: 'https://data.gov.sg/open-data-licence'
+Frequency: 'Annual'
+Coverage: '2019-11-14 to 2020-12-31'
+Last Updated: '2019-11-14T02:16:31.518361'
+Resources:
+  -
+    Identifier: '22411aea-7a64-449a-a03f-8cdff7b99e47'
+    Title: 'List of Schools and Centres offering Higher Mother Tongue'
+    Url: 'https://storage.data.gov.sg/secondary-schools-offering-hmt-csp-msp/resources/list-of-schools-and-centres-offering-higher-mother-tongue-2019-11-14T01-35-15Z.csv'
+    Format: 'CSV'
+    Coverage: '2019-11-14 to 2020-12-31'
+    Last Updated: '2019-11-14T01:35:15.210568'
+    Schema:
+      -
+        Name: 'y2020_school_centre'
+        Title: 'Y2020 school centre'
+        Type: 'text'
+        Sub Type: 'general'
+      -
+        Name: 'offer_hcl'
+        Title: 'Offer HCL'
+        Type: 'text'
+        Sub Type: 'general'
+      -
+        Name: 'hcl_designated_centre'
+        Title: 'HCL Designated Centre'
+        Type: 'text'
+        Sub Type: 'general'
+      -
+        Name: 'offer_hml'
+        Title: 'Offer HML'
+        Type: 'text'
+        Sub Type: 'general'
+      -
+        Name: 'hml_designated_centre'
+        Title: 'HML Designated Centre'
+        Type: 'text'
+        Sub Type: 'general'
+      -
+        Name: 'offer_htl'
+        Title: 'Offer HTL'
+        Type: 'text'
+        Sub Type: 'general'
+      -
+        Name: 'htl_designated_centre'
+        Title: 'HTL Designated Centre'
+        Type: 'text'
+        Sub Type: 'general'

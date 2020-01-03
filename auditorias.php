@@ -18,9 +18,8 @@
                 <tr>
                   <?php
                     $titulo = $insertar_escuela->get_Table_Header($insertar_escuela->get_Sql());?>
-                    <th></th>
                   <?php
-                     for($i=1;$i<sizeof($titulo);$i++){
+                     for($i=0;$i<sizeof($titulo);$i++){
                        echo "<th> $titulo[$i] </th>";
                      }
                    ?>
@@ -55,9 +54,8 @@
               <tr>
                 <?php
                    $titulo = $actualizar_escuela->get_Table_Header($actualizar_escuela->get_Sql());?>
-                   <th></th>
                 <?php
-                   for($i=1;$i<sizeof($titulo);$i++){
+                   for($i=0;$i<sizeof($titulo);$i++){
                      echo "<th> $titulo[$i] </th>";
                    }
                  ?>
@@ -92,9 +90,8 @@
                   <tr>
                     <?php
                       $titulo = $borrar_escuela->get_Table_Header($borrar_escuela->get_Sql());?>
-                      <th></th>
                     <?php
-                       for($i=1;$i<sizeof($titulo);$i++){
+                       for($i=0;$i<sizeof($titulo);$i++){
                          echo "<th> $titulo[$i] </th>";
                        }
                      ?>

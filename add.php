@@ -1,8 +1,12 @@
 <?php
 require_once("funciones.php");
-$ta=new Tabla("INSERT INTO escuelas VALUES (default,?,?,?,?,?,?,?)");
+$ta=new Tabla("INSERT INTO escuelas VALUES (?,?,?,?,?,?,?)");
+$last_id=$ta->obtener_ultimo_id();
+$ta1=new Tabla("INSERT INTO escuelas_id VALUES ($last_id,?)");
+
 if (isset($_POST["grabar"]) and $_POST["grabar"]=="si"){
   $ta->insertar();
+  $ta1->insertar1();
   exit;
 }
 ?>
@@ -23,12 +27,12 @@ if (isset($_POST["grabar"]) and $_POST["grabar"]=="si"){
     switch ($_GET["m"]) {
       case '1':
         ?>
-        <h4 style="color: #AE0A0A;">Please, fill all the fields.</h4>
+        <h4 style="color: #AE0A0A;">Please, fill all the fields.<?php echo $ta->obtener_ultimo_id(); ?></h4>
         <?php
         break;
       case '2':
           ?>
-          <h4 style="color: green;">School added succesfully!</h4>
+          <h4 style="color: green;">School added succesfully!<?php echo $ta->obtener_ultimo_id(); ?></h4>
           <?php
           break;
     }
@@ -64,9 +68,8 @@ if (isset($_POST["grabar"]) and $_POST["grabar"]=="si"){
         <tr>
           <?php
              $titulo = $insertar_escuela->get_Table_Header($insertar_escuela->get_Sql());?>
-             <th></th>
           <?php
-             for($i=1;$i<sizeof($titulo);$i++){
+             for($i=0;$i<sizeof($titulo);$i++){
                echo "<th> $titulo[$i] </th>";
              }
            ?>

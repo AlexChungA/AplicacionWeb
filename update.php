@@ -1,11 +1,13 @@
 <?php
 require_once("funciones.php");
-$ta=new Tabla("UPDATE escuelas SET y2020_school_centre = ?,offer_hcl=?,hcl_designated_centre=?,	offer_hml=?,	hml_designated_centre=?,	offer_htl=?,	htl_designated_centre=? WHERE school_id=?	");
+$ta=new Tabla("UPDATE escuelas SET y2020_school_centre = ?,offer_hcl=?,hcl_designated_centre=?,	offer_hml=?,	hml_designated_centre=?,	offer_htl=?,	htl_designated_centre=? WHERE y2020_school_centre=?	");
+$ta1= new Tabla("UPDATE escuelas_id SET school_name=?");
 if (isset($_POST["grabar"]) and $_POST["grabar"]=="si"){
   $ta->actualizar();
+  $ta1->actualizar1();
   exit;
 }
-$datos=$ta->get_school_by_id($_GET["school_id"]);
+$datos=$ta->get_school_by_name($_GET["school_name"]);
 ?>
 <!DOCTYPE html>
 <head>
@@ -49,7 +51,6 @@ $datos=$ta->get_school_by_id($_GET["school_id"]);
           <input type="text" name="op6" placeholder="htl_designated_centre" value="<?php echo $datos[0]["htl_designated_centre"]; ?>" class="form-control">
         </div>
         <input type = "hidden" name="grabar" value="si"/>
-        <input type = "hidden" name= "school_id" value="<?php echo $_GET["school_id"];?>"/>
         <div class "add">
         <button type = "submit" class="btn btn2" class="btn btn-primary">
           Update new school
@@ -68,9 +69,8 @@ $datos=$ta->get_school_by_id($_GET["school_id"]);
         <tr>
           <?php
              $titulo = $actualizar_escuela->get_Table_Header($actualizar_escuela->get_Sql());?>
-             <th></th>
           <?php
-             for($i=1;$i<sizeof($titulo);$i++){
+             for($i=0;$i<sizeof($titulo);$i++){
                echo "<th> $titulo[$i] </th>";
              }
            ?>

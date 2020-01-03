@@ -2,7 +2,6 @@ create domain Logico varchar(3) check(value in('yes','no','Yes','No','YES','NO')
 
 CREATE TABLE public.escuelas
 (
-	school_id serial primary key,
     y2020_school_centre character varying(50) COLLATE pg_catalog."default",
     offer_hcl Logico COLLATE pg_catalog."default",
     hcl_designated_centre Logico COLLATE pg_catalog."default",
@@ -10,6 +9,12 @@ CREATE TABLE public.escuelas
     hml_designated_centre Logico COLLATE pg_catalog."default",
     offer_htl Logico COLLATE pg_catalog."default",
     htl_designated_centre Logico COLLATE pg_catalog."default"
+)
+
+CREATE TABLE public.escuelas_id
+(
+	school_id serial primary key,
+	y2020_school_centre character varying(50) COLLATE pg_catalog."default"
 )
 
 INSERT INTO public.escuelas(y2020_school_centre,offer_hcl,hcl_designated_centre,offer_hml,hml_designated_centre,offer_htl,htl_designated_centre) VALUES ('Admiralty Sec Sch','Yes','No','Yes','No','No','No'),
@@ -134,49 +139,171 @@ INSERT INTO public.escuelas(y2020_school_centre,offer_hcl,hcl_designated_centre,
 ('MOE Language Centre (Bishan)','No','No','Yes','Yes','No','No'),
 ('Umar Pulavar Tamil Language Centre','No','No','No','No','Yes','Yes');
 
+INSERT INTO public.escuelas_id(y2020_school_centre) VALUES ('Admiralty Sec Sch'),('Ahmad Ibrahim Sec Sch'),
+('Anderson Sec Sch'),
+('Anglican High Sch'),
+('Ang Mo Kio Sec Sch'),
+('Anglo-Chinese Sch (Independent)'),
+('Bartley Sec Sch'),
+('Assumption English Sch'),
+('Beatty Sec Sch'),
+('Bedok View Sec Sch'),
+('Bedok South Sec Sch'),
+('Bendemeer Sec Sch'),
+('Boon Lay Sec Sch'),
+('Bowen Sec Sch'),
+('Bukit Batok Sec Sch'),
+('Bukit Panjang Govt. High Sch'),
+('Bukit View Sec Sch'),
+('Catholic High Sch'),
+('Cedar Girls´ Sec Sch'),
+('CHIJ Katong Convent'),
+('CHIJ Sec (Toa Payoh)'),
+('CHIJ St. Joseph´s Convent'),
+('CHIJ St. Nicholas Girls´ Sch'),
+('CHIJ St. Theresa´s Convent´25'),
+('Christ Church Sec Sch'),
+('Chua Chu Kang Sec Sch'),
+('Chung Cheng High Sch (Main)'),
+('Chung Cheng High Sch (Yishun)'),
+('Clementi Town Sec Sch'),
+('Commonwealth Sec Sch'),
+('Crescent Girls´ Sch'),
+('Deyi Sec Sch'),
+('Dunman High Sch'),
+('Dunman Sec Sch'),
+('East Spring Sec Sch'),
+('Edgefield Sec Sch'),
+('Evergreen Sec Sch'),
+('Fairfield Methodist Sch (Sec)'),
+('Fajar Sec Sch'),
+('Fuchun Sec Sch'),
+('Fuhua Sec Sch'),
+('Gan Eng Seng Sch'),
+('Geylang Methodist Sch (Sec)'),
+('Greenridge Sec Sch'),
+('Guangyang Sec Sch'),
+('Hai Sing Catholic Sch'),
+('Hillgrove Sec Sch'),
+('Holy Innocents´ High Sch'),
+('Hua Yi Sec Sch'),
+('Hwa Chong Institution'),
+('Junyuan Sec Sch'),
+('Jurong Sec Sch'),
+('Jurong West Sec Sch'),
+('Jurongville Sec Sch'),
+('Juying Sec Sch'),
+('Kent Ridge Sec Sch'),
+('Kranji Sec Sch'),
+('Kuo Chuan Presbyterian Sec Sch'),
+('Loyang View Sec Sch'),
+('Manjusri Sec Sch'),
+('Maris Stella High Sch'),
+('Marsiling Sec Sch'),
+('Mayflower Sec Sch'),
+('Meridian Sec Sch'),
+('Methodist Girls´ Sch (Sec)'),
+('Montfort Sec Sch'),
+('Nan Chiau High Sch'),
+('Nan Hua High Sch'),
+('Nanyang Girls´ High Sch'),
+('National Junior College'),
+('Ngee Ann Sec Sch'),
+('North Vista Sec Sch'),
+('Orchid Park Sec Sch'),
+('Outram Sec Sch'),
+('Pasir Ris Crest Sec Sch'),
+('Pasir Ris Sec Sch'),
+('Paya Lebar Methodist Girls´ Sch (Sec)'),
+('Pei Hwa Sec Sch'),
+('Peirce Sec Sch'),
+('Punggol Sec Sch'),
+('Presbyterian High Sch'),
+('Queensway Sec Sch'),
+('Raffles Institution'),
+('Raffles Girls´ Sch (Sec)'),
+('River Valley High Sch'),
+('Riverside Sec Sch'),
+('Sembawang Sec Sch'),
+('Seng Kang Sec Sch'),
+('Serangoon Garden Sec Sch'),
+('Singapore Chinese Girls´ Sch'),
+('Springfield Sec Sch'),
+('St. Andrew´s Sec Sch'),
+('St. Hilda´s Sec Sch'),
+('St. Joseph´s Institution'),
+('St. Margaret´s Sec Sch'),
+('Swiss Cottage Sec Sch'),
+('Tampines Sec Sch'),
+('Tanjong Katong Girls´ Sch'),
+('Tanjong Katong Sec Sch'),
+('Teck Whye Sec Sch'),
+('Temasek Junior College'),
+('Temasek Sec Sch'),
+('Unity Sec Sch'),
+('Victoria Sch'),
+('West Spring Sec Sch'),
+('Whitley Sec Sch'),
+('Woodgrove Sec Sch'),
+('Westwood Sec Sch'),
+('Woodlands Ring Sec Sch'),
+('Xinmin Sec Sch'),
+('Woodlands Sec Sch'),
+('Yio Chu Kang Sec Sch'),
+('Yishun Sec Sch'),
+('Yishun Town Sec Sch'),
+('Yuan Ching Sec Sch'),
+('Yuhua Sec Sch'),
+('Yuying Sec Sch'),
+('Zhenghua Sec Sch'),
+('Zhonghua Sec Sch'),
+('MOE Language Centre (Bishan)'),
+('Umar Pulavar Tamil Language Centre');
+
+
 CREATE TABLE public.in_escuelas_auditoria
 (
-	school_id int unique,
     y2020_school_centre character varying(50) COLLATE pg_catalog."default",
     offer_hcl Logico COLLATE pg_catalog."default",
     hcl_designated_centre Logico COLLATE pg_catalog."default",
     offer_hml Logico COLLATE pg_catalog."default",
     hml_designated_centre Logico COLLATE pg_catalog."default",
     offer_htl Logico COLLATE pg_catalog."default",
-    htl_designated_centre Logico COLLATE pg_catalog."default"
+    htl_designated_centre Logico COLLATE pg_catalog."default",
+		fecha_y_hora timestamp without time zone DEFAULT ('now'::text)::timestamp(0) with time zone NOT NULL
 )
 CREATE TABLE public.up_escuelas_auditoria
 (
-	school_id int,
     y2020_school_centre character varying(50) COLLATE pg_catalog."default",
     offer_hcl Logico COLLATE pg_catalog."default",
     hcl_designated_centre Logico COLLATE pg_catalog."default",
     offer_hml Logico COLLATE pg_catalog."default",
     hml_designated_centre Logico COLLATE pg_catalog."default",
     offer_htl Logico COLLATE pg_catalog."default",
-    htl_designated_centre Logico COLLATE pg_catalog."default"
+    htl_designated_centre Logico COLLATE pg_catalog."default",
+		fecha_y_hora timestamp without time zone DEFAULT ('now'::text)::timestamp(0) with time zone NOT NULL
 )
 CREATE TABLE public.del_escuelas_auditoria
 (
-	school_id int,
     y2020_school_centre character varying(50) COLLATE pg_catalog."default",
     offer_hcl Logico COLLATE pg_catalog."default",
     hcl_designated_centre Logico COLLATE pg_catalog."default",
     offer_hml Logico COLLATE pg_catalog."default",
     hml_designated_centre Logico COLLATE pg_catalog."default",
     offer_htl Logico COLLATE pg_catalog."default",
-    htl_designated_centre Logico COLLATE pg_catalog."default"
+    htl_designated_centre Logico COLLATE pg_catalog."default",
+		fecha_y_hora timestamp without time zone DEFAULT ('now'::text)::timestamp(0) with time zone NOT NULL
 )
 CREATE OR REPLACE FUNCTION tr_insert_escuela() RETURNS TRIGGER AS $insert$
 DECLARE BEGIN
-INSERT INTO in_escuelas_auditoria VALUES(new.school_id, new.y2020_school_centre,new.offer_hcl,new.hcl_designated_centre,new.offer_hml,new.hml_designated_centre,new.offer_htl,new.htl_designated_centre);
+INSERT INTO in_escuelas_auditoria VALUES( new.y2020_school_centre,new.offer_hcl,new.hcl_designated_centre,new.offer_hml,new.hml_designated_centre,new.offer_htl,new.htl_designated_centre);
 RETURN NULL;
 END;
 $insert$ LANGUAGE plpgsql;
 
 CREATE OR REPLACE FUNCTION tr_delete_escuela() RETURNS TRIGGER AS $delete$
 DECLARE BEGIN
-INSERT INTO del_escuelas_auditoria VALUES(old.school_id, old.y2020_school_centre,old.offer_hcl,old.hcl_designated_centre,old.offer_hml,old.hml_designated_centre,old.offer_htl,old.htl_designated_centre);
+INSERT INTO del_escuelas_auditoria VALUES( old.y2020_school_centre,old.offer_hcl,old.hcl_designated_centre,old.offer_hml,old.hml_designated_centre,old.offer_htl,old.htl_designated_centre);
 RETURN NULL;
 END;$delete$ LANGUAGE plpgsql;
 
@@ -186,7 +313,7 @@ DECLARE BEGIN
 IF new.y2020_school_centre IS NOT NULL
 THEN
 INSERT INTO up_escuelas_auditoria
-VALUES(old.school_id,old.y2020_school_centre,old.offer_hcl,old.hcl_designated_centre,old.offer_hml,old.hml_designated_centre,old.offer_htl,old.htl_designated_centre);
+VALUES(old.y2020_school_centre,old.offer_hcl,old.hcl_designated_centre,old.offer_hml,old.hml_designated_centre,old.offer_htl,old.htl_designated_centre);
 END IF;
 RETURN NULL;
 END;
